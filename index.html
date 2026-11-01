@@ -249,6 +249,14 @@ body { margin: 0; background: #0b0e12; }
 .ghl-portfolio .embed code { color: var(--accent); word-break: break-all; font-size: .9rem; }
 .ghl-portfolio .embed iframe { width: 100%; border: 0; min-height: 600px; }
 .ghl-portfolio .embed-soon { min-height: 0; }
+.ghl-portfolio .embed-calendly { padding: 0; gap: 0; overflow: hidden; justify-content: flex-start; }
+.ghl-portfolio .embed-calendly .calendly-inline-widget { width: 100%; }
+.ghl-portfolio .embed-calendly .calendly-inline-widget iframe { min-height: 0; }
+.ghl-portfolio .embed-fallback { margin: 0; padding: 16px 20px 0; }
+.ghl-portfolio .embed-alt {
+  margin: 0; padding: 14px 20px; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: .95rem; color: var(--muted);
+}
 .ghl-portfolio .book > div { min-width: 0; } /* stop wide content stretching the grid on phones */
 
 /* Contact block (email link; same card look as the rest of the page) */
@@ -678,19 +686,13 @@ body { margin: 0; background: #0b0e12; }
         <!-- CALENDAR EMBED -->
         <div>
           <h3>Pick a time</h3>
-          <div class="embed embed-soon" id="calendar-embed">
-            <!--
-              TODO: In GoHighLevel go to Calendars > Calendar Settings > your calendar > Share > Embed Code.
-              Replace the "coming soon" text below with your embed. It looks like this:
-
-              <iframe src="REPLACE_WITH_YOUR_GHL_CALENDAR_URL" style="width:100%;border:0;overflow:hidden;" scrolling="no" id="ghl-calendar" title="Book a free strategy call"></iframe>
-              <script src="REPLACE_WITH_YOUR_GHL_FORM_EMBED_SCRIPT_URL" type="text/javascript"></script>
-
-              Use the exact snippet GoHighLevel gives you (including its script line, if it provides one).
-            -->
-            <strong>Chat with me on Zoom</strong>
-            <span>Message me on Zoom and we'll set a time for your free strategy call.</span>
-            <a class="btn btn-primary" href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&amp;email=marklpolidario@gmail.com" target="_blank" rel="noopener" aria-label="Chat on Zoom (opens in new tab)">Chat on Zoom</a>
+          <div class="embed embed-calendly" id="calendar-embed">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/marklpolidario/30min?hide_gdpr_banner=1&amp;background_color=151b23&amp;text_color=eef2f6&amp;primary_color=c8ff3d" style="min-width:320px;height:700px;"></div>
+            <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+            <noscript><p class="embed-fallback"><a class="btn btn-ghost btn-sm" href="https://calendly.com/marklpolidario/30min" target="_blank" rel="noopener">Open my booking page</a></p></noscript>
+            <p class="embed-alt">Prefer to chat first? <a class="btn btn-ghost btn-sm" href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&amp;email=marklpolidario@gmail.com" target="_blank" rel="noopener" aria-label="Chat on Zoom (opens in new tab)">Chat on Zoom</a></p>
           </div>
         </div>
 
