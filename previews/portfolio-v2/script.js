@@ -382,23 +382,10 @@
     if (d.fonts && d.fonts.ready) d.fonts.ready.then(fitHeight);
   })();
 
-  /* ---------- 9. Liquid photo (Marcus Vane LiquidImage, hover only on desktop) ---------- */
+  /* ---------- 9. About photo: grey-to-colour reveal (no distortion) ---------- */
   (function liquid() {
     var fig = $('#liquid'); if (!fig || !MOTION) return;
-    var disp = $('feDisplacementMap', fig), turb = $('feTurbulence', fig);
-    new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { setTimeout(function () { fig.classList.add('seen'); }, 500); o.disconnect(); } }, { threshold: .5 }).observe(fig);
-    if (!FINE || w.innerWidth <= 768) return;
-    fig.classList.add('fx');
-    var target = 0, val = 0, vel = 0, raf = 0;
-    function step() { // spring: tension 140 / friction 13 (watery wobble)
-      var f = -140 * (val - target) - 13 * vel; vel += f * 0.016; val += vel * 0.016;
-      disp.setAttribute('scale', (1 + val * 29).toFixed(2));
-      turb.setAttribute('baseFrequency', (0.009 + val * 0.013).toFixed(4));
-      if (Math.abs(val - target) > 0.001 || Math.abs(vel) > 0.001) raf = requestAnimationFrame(step); else raf = 0;
-    }
-    function go(t) { target = t; if (!raf) raf = requestAnimationFrame(step); }
-    fig.addEventListener('pointerenter', function () { go(1); });
-    fig.addEventListener('pointerleave', function () { go(0); });
+        new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { setTimeout(function () { fig.classList.add('seen'); }, 500); o.disconnect(); } }, { threshold: .5 }).observe(fig);
   })();
 
   /* ---------- 10. Cursor ring that morphs onto targets (magnetic cursor prompt) ---------- */

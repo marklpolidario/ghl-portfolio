@@ -326,9 +326,7 @@ button.btn-sm[aria-pressed="true"] { border-color: var(--accent); color: var(--a
 .about p + p { margin-top: 14px; }
 .about p strong { color: var(--text); }
 .liquid { position: relative; width: 100%; max-width: 360px; aspect-ratio: 1 / 1; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: radial-gradient(130% 130% at 30% 15%, #18202a, var(--bg)); }
-.liquid-svg { position: absolute; width: 0; height: 0; }
 .liquid .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.js .liquid.fx .photo { filter: url(#liquid-filter); }
 .liquid-veil { position: absolute; inset: 0; background: var(--bg); mix-blend-mode: color; opacity: 0; transition: opacity .38s ease-out; pointer-events: none; }
 .motion .liquid-veil { opacity: .85; }
 .motion .liquid:hover .liquid-veil, .motion .liquid.seen .liquid-veil { opacity: 0; }
