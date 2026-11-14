@@ -459,11 +459,12 @@ html.motion .cs-card.is-enter { animation: csEnter .45s var(--ease-expo); }
   to { opacity: 1; transform: none; }
 }
 .cs-fig {
-  margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: #0a0c10;
+  margin: 0; position: relative; height: 0; padding-top: 62.5%; overflow: hidden; background: #0a0c10;
   border-bottom: 1px solid var(--line);
 }
 .cs-fig img {
-  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-width: none;
+  object-fit: cover; object-position: top center;
 }
 .cs-body { padding: 20px 20px 22px; }
 .cs-tag {
@@ -553,7 +554,7 @@ html.motion .cs-dialog.is-open .cs-panel { animation: csUp .45s var(--ease-expo)
   margin: 0; background: #0a0c10; border: 1px solid var(--line);
   border-radius: 14px; overflow: hidden; position: relative;
 }
-.cs-mainfig img { width: 100%; height: auto; max-height: 62vh; object-fit: contain; margin: 0 auto; background: #0a0c10; }
+.cs-mainfig img { display: block; width: auto; height: auto; max-width: 100%; max-height: 62vh; margin: 0 auto; background: #0a0c10; }
 .cs-navbtn {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; border-radius: 50%;
