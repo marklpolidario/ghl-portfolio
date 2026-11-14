@@ -423,3 +423,184 @@ details p { padding: 0 4px 22px; color: var(--muted); max-width: 64ch; }
 /* keep the stacked/thrown cards from widening the page on phones */
 #work { overflow-x: clip; }
 .no-js .menu-btn { display: none; }
+
+/* =====================================================================
+   Case studies (portfolio v3)
+   ===================================================================== */
+.cs-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 36px; }
+.cs-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.cs-filters .btn { min-height: 44px; }
+.cs-count { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin-left: auto; }
+.cs-grid {
+  display: grid; gap: 20px;
+  grid-template-columns: 1fr;
+}
+.cs-card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+}
+.cs-card[hidden] { display: none; }
+.cs-card.is-exit {
+  opacity: 0;
+  transform: scale(.96);
+  pointer-events: none;
+}
+html.motion .cs-card {
+  transition: opacity .35s var(--ease-expo), transform .4s var(--ease-expo), box-shadow .4s var(--ease-expo), border-color .2s ease;
+}
+html.motion .cs-card.is-enter { animation: csEnter .45s var(--ease-expo); }
+@keyframes csEnter {
+  from { opacity: 0; transform: translateY(16px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+.cs-fig {
+  margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: #0a0c10;
+  border-bottom: 1px solid var(--line);
+}
+.cs-fig img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+}
+.cs-body { padding: 20px 20px 22px; }
+.cs-tag {
+  display: inline-block;
+  font-family: var(--mono); font-size: .7rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent-ink); background: var(--accent);
+  border-radius: 999px; padding: 4px 10px; margin-bottom: 12px;
+}
+.cs-body h3 { font-size: 1.28rem; margin-bottom: 8px; letter-spacing: -.02em; padding-right: 8px; }
+.cs-problem { color: var(--muted); font-size: .95rem; margin-bottom: 14px; }
+.cs-body .feat-list { margin-bottom: 14px; gap: 8px; }
+.cs-body .feat-list li { font-size: .92rem; }
+.cs-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.cs-chips span {
+  font-family: var(--mono); font-size: .7rem; font-weight: 600;
+  letter-spacing: .04em; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px;
+}
+.cs-result {
+  margin: 0; padding: 10px 12px; border-radius: 10px;
+  background: rgba(200,255,61,.08); border: 1px solid rgba(200,255,61,.28);
+  color: var(--text); font-size: .9rem;
+}
+.cs-result b, .cs-result [data-cs-count] {
+  font-family: var(--mono); font-weight: 700; color: var(--accent);
+}
+.cs-open {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  background: transparent; border: 0; cursor: pointer; z-index: 2;
+  border-radius: inherit;
+}
+.cs-open:focus { outline: none; }
+.cs-open:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.cs-hint {
+  position: absolute; right: 12px; bottom: 12px; z-index: 3; pointer-events: none;
+  font-family: var(--mono); font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent-ink); background: var(--accent);
+  border-radius: 999px; padding: 4px 10px; opacity: 0;
+}
+html.motion .cs-hint { transition: opacity .2s ease; }
+.cs-card:hover .cs-hint, .cs-open:focus-visible + .cs-hint, .cs-card:focus-within .cs-hint { opacity: 1; }
+/* hint is after the button in DOM so the sibling selector works if we put it after .cs-open */
+
+@media (hover: hover) and (pointer: fine) {
+  html.motion .cs-card:hover {
+    border-color: rgba(200,255,61,.45);
+    box-shadow: 0 22px 40px rgba(0,0,0,.38);
+    transform: translateY(-8px);
+  }
+  html.motion .cs-card.is-tilt:hover { transition: box-shadow .2s ease, border-color .2s ease; }
+}
+
+/* Lightbox / slide panel */
+.cs-dialog { position: fixed; inset: 0; z-index: 300; display: flex; align-items: flex-end; justify-content: center; }
+.cs-dialog[hidden] { display: none; }
+.cs-backdrop { position: absolute; inset: 0; background: rgba(5,7,10,.78); border: 0; padding: 0; cursor: pointer; }
+.cs-panel {
+  position: relative; z-index: 1;
+  width: 100%; max-height: 96vh;
+  background: var(--bg-alt); color: var(--text);
+  border-top: 1px solid var(--line);
+  border-radius: 20px 20px 0 0;
+  overflow: auto;
+  padding: 20px 20px 40px;
+  box-shadow: 0 -20px 60px rgba(0,0,0,.45);
+}
+html.motion .cs-dialog.is-open .cs-backdrop { animation: csFade .3s ease-out; }
+html.motion .cs-dialog.is-open .cs-panel { animation: csUp .45s var(--ease-expo); }
+@keyframes csFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes csUp { from { transform: translateY(32px); opacity: 0; } to { transform: none; opacity: 1; } }
+.cs-panel-head {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  margin-bottom: 16px; position: sticky; top: 0; z-index: 2;
+  background: linear-gradient(var(--bg-alt) 70%, rgba(16,21,27,0));
+  padding: 4px 0 16px;
+}
+.cs-panel-head h2 { font-size: clamp(1.4rem, 4vw, 2rem); max-width: 28ch; margin: 0; }
+.cs-close {
+  flex: 0 0 auto; min-width: 44px; min-height: 44px;
+  border-radius: 999px; border: 2px solid var(--line); background: var(--card);
+  color: var(--text); font-weight: 700; cursor: pointer; padding: 0 16px;
+}
+.cs-close:hover { border-color: var(--accent); color: var(--accent); }
+.cs-gallery { margin-bottom: 22px; }
+.cs-mainfig {
+  margin: 0; background: #0a0c10; border: 1px solid var(--line);
+  border-radius: 14px; overflow: hidden; position: relative;
+}
+.cs-mainfig img { width: 100%; height: auto; max-height: 62vh; object-fit: contain; margin: 0 auto; background: #0a0c10; }
+.cs-navbtn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line); background: rgba(11,14,18,.85); color: var(--text);
+  font-size: 1.2rem; cursor: pointer;
+}
+.cs-navbtn:hover, .cs-navbtn:focus-visible { border-color: var(--accent); color: var(--accent); }
+.cs-prev { left: 10px; }
+.cs-next { right: 10px; }
+.cs-thumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.cs-thumbs button {
+  padding: 0; border: 2px solid var(--line); border-radius: 8px; background: #0a0c10;
+  width: 88px; height: 56px; overflow: hidden; cursor: pointer;
+}
+.cs-thumbs button img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.cs-thumbs button[aria-pressed="true"], .cs-thumbs button:focus-visible { border-color: var(--accent); }
+.cs-panel-copy .cs-tag { margin-bottom: 14px; }
+.cs-panel-copy h3 { font-size: 1.05rem; margin: 18px 0 8px; }
+.cs-panel-copy .feat-list { margin-bottom: 8px; }
+.cs-panel-copy .cs-tools { color: var(--muted); font-size: .95rem; margin: 14px 0; }
+.cs-note {
+  margin-top: 20px; padding: 12px 14px; border-left: 3px solid var(--accent);
+  background: var(--card); border-radius: 0 10px 10px 0;
+  color: var(--muted); font-size: .9rem;
+}
+body.cs-lock { overflow: hidden; }
+
+@media (min-width: 700px) {
+  .cs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .nav-links { gap: 14px; }
+  .cs-dialog { align-items: stretch; justify-content: flex-end; }
+  .cs-panel {
+    width: min(960px, 100%); height: 100%; max-height: none;
+    border-radius: 0; border-top: 0; border-left: 1px solid var(--line);
+    padding: 28px 36px 48px;
+  }
+  html.motion .cs-dialog.is-open .cs-panel { animation-name: csSlide; }
+  @keyframes csSlide { from { transform: translateX(36px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .cs-body { padding: 22px 24px 24px; }
+}
+@media (min-width: 1100px) {
+  .nav-links { gap: 18px; }
+  .cs-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-card.is-enter, .cs-dialog.is-open .cs-backdrop, .cs-dialog.is-open .cs-panel { animation: none !important; }
+}

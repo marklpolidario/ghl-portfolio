@@ -430,4 +430,253 @@
     });
     p.addEventListener('pointerleave', function () { p.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1)'; p.style.transform = ''; setTimeout(function () { p.style.transition = ''; }, 500); });
   })();
+
+  /* ---------- 12. Case studies: filters, hover tilt, lightbox ---------- */
+  (function caseStudies() {
+    var section = $('#case-studies');
+    if (!section) return;
+    var grid = $('#cs-grid');
+    var cards = $$('.cs-card', section);
+    var filters = $$('.cs-filters [data-filter]', section);
+    var live = $('#cs-live');
+    var dialog = $('#cs-dialog');
+    var panel = dialog ? $('.cs-panel', dialog) : null;
+    var backdrop = dialog ? $('.cs-backdrop', dialog) : null;
+    var closeBtn = dialog ? $('.cs-close', dialog) : null;
+    var titleEl = dialog ? $('#cs-dialog-title', dialog) : null;
+    var tagEl = dialog ? $('#cs-dialog-tag', dialog) : null;
+    var copyEl = dialog ? $('#cs-dialog-copy', dialog) : null;
+    var imgEl = dialog ? $('#cs-dialog-img', dialog) : null;
+    var thumbs = dialog ? $('#cs-thumbs', dialog) : null;
+    var prevBtn = dialog ? $('.cs-prev', dialog) : null;
+    var nextBtn = dialog ? $('.cs-next', dialog) : null;
+    var openBtn = null;
+    var gallery = [];
+    var galIndex = 0;
+    var lastFilter = 'all';
+    var cursor = $('#cursor');
+    if (dialog && dialog.parentElement !== d.body) d.body.appendChild(dialog);
+
+    function clearTilts() {
+      cards.forEach(function (c) { c.classList.remove('is-tilt'); c.style.transform = ''; });
+      if (cursor) { cursor.classList.remove('on', 'snap'); cursor.style.opacity = '0'; }
+    }
+
+    function cardCount(filter) {
+      return cards.filter(function (c) {
+        return filter === 'all' || c.getAttribute('data-cat') === filter;
+      }).length;
+    }
+    function announce(filter) {
+      if (!live) return;
+      var n = cardCount(filter);
+      var label = filter === 'all' ? 'all industries' : (filter === 'home' ? 'Home services' : 'Coaching and education');
+      live.textContent = 'Showing ' + n + ' case ' + (n === 1 ? 'study' : 'studies') + ' for ' + label + '.';
+      var count = $('#cs-count');
+      if (count) count.textContent = n + (n === 1 ? ' case study' : ' case studies');
+    }
+    function applyFilter(filter, opts) {
+      var instant = opts && opts.instant;
+      lastFilter = filter;
+      filters.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-filter') === filter ? 'true' : 'false');
+      });
+      cards.forEach(function (card) {
+        var show = filter === 'all' || card.getAttribute('data-cat') === filter;
+        var hideTimer = card._csHide;
+        if (hideTimer) { clearTimeout(hideTimer); card._csHide = null; }
+        if (show) {
+          var wasHidden = card.hidden || card.classList.contains('is-exit');
+          card.hidden = false;
+          card.classList.remove('is-exit');
+          if (wasHidden && MOTION && !instant) {
+            card.classList.remove('is-enter');
+            void card.offsetWidth;
+            card.classList.add('is-enter');
+          } else {
+            card.classList.remove('is-enter');
+          }
+        } else if (!card.hidden) {
+          if (MOTION && !instant) {
+            card.classList.remove('is-enter');
+            card.classList.add('is-exit');
+            card._csHide = setTimeout(function () {
+              card.hidden = true;
+              card.classList.remove('is-exit');
+              card._csHide = null;
+            }, 360);
+          } else {
+            card.hidden = true;
+            card.classList.remove('is-enter', 'is-exit');
+          }
+        }
+      });
+      announce(filter);
+    }
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyFilter(btn.getAttribute('data-filter'));
+      });
+    });
+    announce('all');
+
+    /* Pointer-only tilt (motion allowed). */
+    if (MOTION && FINE) {
+      cards.forEach(function (card) {
+        card.addEventListener('pointermove', function (e) {
+          if (e.pointerType !== 'mouse' || card.hidden || card.classList.contains('is-exit')) return;
+          var r = card.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width - 0.5;
+          var py = (e.clientY - r.top) / r.height - 0.5;
+          card.classList.add('is-tilt');
+          card.style.transform = 'translateY(-8px) rotateX(' + (-py * 5).toFixed(2) + 'deg) rotateY(' + (px * 6).toFixed(2) + 'deg)';
+        });
+        card.addEventListener('pointerleave', function () {
+          card.classList.remove('is-tilt');
+          card.style.transform = '';
+        });
+      });
+    }
+
+    /* Result count-up, only for real numbers flagged with data-cs-count. */
+    function countCs(el) {
+      if (el.getAttribute('data-cs-done')) return;
+      el.setAttribute('data-cs-done', '1');
+      if (!MOTION) return;
+      var to = parseInt(el.getAttribute('data-cs-count'), 10);
+      if (isNaN(to)) return;
+      var t0 = performance.now(), dur = 900;
+      (function f(t) {
+        var p = clamp((t - t0) / dur, 0, 1), e = 1 - Math.pow(1 - p, 4);
+        el.textContent = String(Math.round(to * e));
+        if (p < 1) requestAnimationFrame(f);
+      })(t0);
+    }
+    if ('IntersectionObserver' in w) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          countCs(en.target);
+          cio.unobserve(en.target);
+        });
+      }, { threshold: 0.4 });
+      $$('[data-cs-count]', section).forEach(function (el) { cio.observe(el); });
+    }
+
+    function focusables() {
+      if (!panel) return [];
+      return $$('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])', panel).filter(function (el) {
+        return !el.disabled && el.offsetParent !== null && !el.hidden;
+      });
+    }
+    function showImage(i) {
+      if (!gallery.length || !imgEl) return;
+      galIndex = (i + gallery.length) % gallery.length;
+      var item = gallery[galIndex];
+      imgEl.src = item.src;
+      imgEl.alt = item.alt;
+      if (thumbs) {
+        $$('button', thumbs).forEach(function (b, n) {
+          b.setAttribute('aria-pressed', n === galIndex ? 'true' : 'false');
+        });
+      }
+      var many = gallery.length > 1;
+      if (prevBtn) prevBtn.hidden = !many;
+      if (nextBtn) nextBtn.hidden = !many;
+      if (thumbs) thumbs.hidden = !many;
+    }
+    function openCard(card) {
+      if (!dialog || !panel || !card) return;
+      openBtn = $('.cs-open', card);
+      var full = $('.cs-full', card);
+      var heading = $('h3', card);
+      if (titleEl) titleEl.textContent = heading ? heading.textContent : 'Case study';
+      if (tagEl) tagEl.textContent = ($('.cs-tag', card) || {}).textContent || '';
+      if (copyEl && full) {
+        var clone = full.cloneNode(true);
+        clone.hidden = false;
+        clone.classList.remove('cs-full');
+        $$('.cs-gallery', clone).forEach(function (g) { g.remove(); });
+        copyEl.innerHTML = '';
+        copyEl.appendChild(clone);
+        /* Recount in the panel if a result number is present. */
+        $$('[data-cs-count]', copyEl).forEach(function (el) {
+          el.removeAttribute('data-cs-done');
+          el.textContent = '0';
+          countCs(el);
+        });
+      }
+      gallery = [];
+      var sources = full ? $$('.cs-gallery img', full) : [];
+      if (!sources.length) {
+        var lead = $('.cs-fig img', card);
+        if (lead) sources = [lead];
+      }
+      sources.forEach(function (img) {
+        gallery.push({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || '' });
+      });
+      if (thumbs) {
+        thumbs.innerHTML = '';
+        gallery.forEach(function (item, n) {
+          var b = d.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-pressed', n === 0 ? 'true' : 'false');
+          b.setAttribute('aria-label', 'Show image ' + (n + 1) + ' of ' + gallery.length);
+          var im = d.createElement('img');
+          im.src = item.src; im.alt = '';
+          b.appendChild(im);
+          b.addEventListener('click', function () { showImage(n); });
+          thumbs.appendChild(b);
+        });
+      }
+      showImage(0);
+      clearTilts();
+      $$('.cs-open', section).forEach(function (b) { b.setAttribute('aria-expanded', b === openBtn ? 'true' : 'false'); });
+      dialog.hidden = false;
+      void dialog.offsetWidth;
+      dialog.classList.add('is-open');
+      d.body.classList.add('cs-lock');
+      setTimeout(function () { (closeBtn || panel).focus(); }, MOTION ? 50 : 0);
+    }
+    function closeDialog() {
+      if (!dialog || dialog.hidden) return;
+      dialog.classList.remove('is-open');
+      dialog.hidden = true;
+      d.body.classList.remove('cs-lock');
+      if (cursor) cursor.style.opacity = '';
+      $$('.cs-open', section).forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      if (openBtn) openBtn.focus();
+      openBtn = null;
+    }
+
+    cards.forEach(function (card) {
+      var btn = $('.cs-open', card);
+      if (!btn) return;
+      btn.addEventListener('click', function () { openCard(card); });
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeDialog);
+    if (backdrop) backdrop.addEventListener('click', closeDialog);
+    if (prevBtn) prevBtn.addEventListener('click', function () { showImage(galIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { showImage(galIndex + 1); });
+
+    d.addEventListener('keydown', function (e) {
+      if (dialog && !dialog.hidden) {
+        if (e.key === 'Escape') { e.preventDefault(); closeDialog(); return; }
+        if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && gallery.length > 1) {
+          e.preventDefault();
+          showImage(galIndex + (e.key === 'ArrowRight' ? 1 : -1));
+          return;
+        }
+        if (e.key === 'Tab' && panel) {
+          var list = focusables();
+          if (!list.length) return;
+          var first = list[0], last = list[list.length - 1];
+          if (e.shiftKey && d.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+        return;
+      }
+    });
+  })();
+
 })();

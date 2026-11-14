@@ -49,6 +49,7 @@
       <nav aria-label="Main">
         <ul class="nav-links" id="nav-links">
           <li><a href="#featured" data-text="Featured build"><span>Featured build</span></a></li>
+          <li><a href="#case-studies" data-text="Case studies"><span>Case studies</span></a></li>
           <li><a href="#services" data-text="Services"><span>Services</span></a></li>
           <li><a href="#process" data-text="How I work"><span>How I work</span></a></li>
           <li><a href="#work" data-text="Sample projects"><span>Sample projects</span></a></li>
@@ -153,11 +154,599 @@
     </div>
   </section>
 
-  <!-- ============================ SERVICES ============================ -->
-  <section id="services" class="section alt" aria-labelledby="services-title" data-index="02" data-name="Services">
+
+  <!-- ============================ CASE STUDIES (recreated demos, sample data only) ============================ -->
+  <section id="case-studies" class="section alt" aria-labelledby="case-studies-title" data-index="02" data-name="Case studies">
     <div class="wrap">
       <div class="sec-head">
         <span class="sec-num" aria-hidden="true">02</span>
+        <span class="eyebrow">Case studies</span>
+      </div>
+      <h2 id="case-studies-title" data-lines>Systems I have built, shown as sample demos</h2>
+      <p class="lead" data-reveal>A closer look at automations and pages I have set up for home services and for coaching and education. Every visual is a recreated demo with sample data. It does not show a live client account.</p>
+
+      <div class="cs-toolbar">
+        <div class="cs-filters" role="group" aria-label="Filter case studies">
+          <button type="button" class="btn btn-ghost btn-sm" data-filter="all" aria-pressed="true" data-cursor>All</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-filter="home" aria-pressed="false" data-cursor>Home services</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-filter="coaching" aria-pressed="false" data-cursor>Coaching and education</button>
+        </div>
+        <p class="cs-count" id="cs-count">13 case studies</p>
+        <p class="sr-only" id="cs-live" aria-live="polite"></p>
+      </div>
+
+      <div class="cs-grid" id="cs-grid">
+    <article class="cs-card" id="cs-website-router" data-cat="home">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Website to CRM lead router"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/website-lead-router.png" alt="Recreated demo of a website to CRM lead router for a fictional company called Your Roofing Co., showing the form submit path, a test guard, and a sample contact named Jordan Hale with a 555 number." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Home services</p>
+        <h3>Website to CRM lead router</h3>
+        <p class="cs-problem">A Louisiana roofing and exteriors company had a new website form on Home, Financing, and Contact Us. Submissions needed to enter GoHighLevel as website leads, tagged correctly, given a source and persona, assigned to a sales rep, and put into follow up, without being mixed up with event or QR traffic, and without test entries landing on the rep's task list.</p>
+        <ul class="feat-list">
+            <li>Built a dedicated website form and a website lead router in GoHighLevel.</li>
+            <li>The same form is embedded on Home, Financing, and Contact Us, with a consent checkbox and a preferred language choice.</li>
+            <li>A form submitted trigger starts the router, and a test guard checks whether the email or phone is a test contact.</li>
+            <li>On the live path, the contact is tagged as a website lead, source and persona are set, and the record is assigned to the sales rep.</li>
+            <li>On the test path, a test tag is added and the contact is assigned to me so the sales rep is not notified.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span><span>Forms</span></div>
+          <p class="cs-result">Website visitors now come into the CRM as website homeowners, with an owner and a next follow up already in place. Test submits stay on my record, and website leads are no longer tagged or attributed as event or QR leads.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">A Louisiana roofing and exteriors company had a new website form on Home, Financing, and Contact Us. Submissions needed to enter GoHighLevel as website leads, tagged correctly, given a source and persona, assigned to a sales rep, and put into follow up, without being mixed up with event or QR traffic, and without test entries landing on the rep's task list.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built a dedicated website form and a website lead router in GoHighLevel.</li>
+            <li>The same form is embedded on Home, Financing, and Contact Us, with a consent checkbox and a preferred language choice.</li>
+            <li>A form submitted trigger starts the router, and a test guard checks whether the email or phone is a test contact.</li>
+            <li>On the live path, the contact is tagged as a website lead, source and persona are set, and the record is assigned to the sales rep.</li>
+            <li>On the test path, a test tag is added and the contact is assigned to me so the sales rep is not notified.</li>
+          </ul>
+          <h3>How it works</h3>
+          <ul class="feat-list">
+            <li>The same form is embedded on Home, Financing, and Contact Us, with a consent checkbox and a preferred language choice.</li>
+            <li>A form submitted trigger starts the website lead router.</li>
+            <li>An &quot;Is this a test?&quot; guard checks whether the email is my test address or the phone is my test number.</li>
+            <li>On the live path, the contact is tagged as a website lead, Latest Lead Source is set to Website, Persona is set to Homeowner, and the record is assigned to the sales rep.</li>
+            <li>On the test path, the same fields are written, a test tag is added, and the contact is assigned to me so the sales rep is not notified.</li>
+            <li>Both paths add the contact to the homeowner high intent follow up, so the welcome and callback steps can run from one place.</li>
+          </ul>
+          <p class="cs-tools"><strong>Tools used.</strong> GoHighLevel forms and workflows, plus the form embed on the company WordPress site.</p>
+          <p class="cs-result">Website visitors now come into the CRM as website homeowners, with an owner and a next follow up already in place. Test submits stay on my record, and website leads are no longer tagged or attributed as event or QR leads.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/website-lead-router.png" alt="Recreated demo of a website to CRM lead router for a fictional company called Your Roofing Co., showing the form submit path, a test guard, and a sample contact named Jordan Hale with a 555 number." width="1600" height="1000">
+            <img src="media/case-studies/website-form-390.png" alt="Recreated demo of the website inspection form for Your Roofing Co., with a consent checkbox, a preferred language choice, and a 555 phone placeholder." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-event-lifecycle" data-cat="home">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Event registration, reminders, check in, and post event routing"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/event-lifecycle.png" alt="Recreated demo of an event lifecycle for Your Roofing Co., covering registration, reminders, check in, a scan to win giveaway, and post event routing." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Home services</p>
+        <h3>Event registration, reminders, check in, and post event routing</h3>
+        <p class="cs-problem">The company runs in person events and needed one system for sign up, reminders, door check in, a giveaway, and the follow up that should happen after, based on who the person is: a homeowner, a contractor, a partner, or a job applicant, without building a separate process for each role.</p>
+        <ul class="feat-list">
+            <li>Built mobile event pages and four workflows in GoHighLevel: event registration, event reminders, event check in, and a scan to win giveaway.</li>
+            <li>Registration is a one question at a time page that captures persona, language, and whether the person wants an inspection.</li>
+            <li>Reminder emails are timed from the event date, including a tomorrow and a today message, and they stop after check in.</li>
+            <li>Check in at the door matches the email or phone from registration and tags the contact as attended.</li>
+            <li>After the form is in, the persona router sends each person to the right owner and follow up.</li>
+        </ul>
+          <div class="cs-chips"><span>Funnels</span><span>Workflows</span></div>
+          <p class="cs-result">One scan can register an attendee, reminders go out on their own, check in marks who actually came, and each persona leaves the event already on the correct follow up path.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">The company runs in person events and needed one system for sign up, reminders, door check in, a giveaway, and the follow up that should happen after, based on who the person is: a homeowner, a contractor, a partner, or a job applicant, without building a separate process for each role.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built mobile event pages and four workflows in GoHighLevel: event registration, event reminders, event check in, and a scan to win giveaway.</li>
+            <li>Registration is a one question at a time page that captures persona, language, and whether the person wants an inspection.</li>
+            <li>Reminder emails are timed from the event date, including a tomorrow and a today message, and they stop after check in.</li>
+            <li>Check in at the door matches the email or phone from registration and tags the contact as attended.</li>
+            <li>After the form is in, the persona router sends each person to the right owner and follow up.</li>
+          </ul>
+          <h3>How it works</h3>
+          <ul class="feat-list">
+            <li>Registration is a one question at a time page. It captures persona, language, and whether the person wants an inspection, then tags them as registered and saves the event name, date, and location on the contact.</li>
+            <li>Reminder emails are timed from the event date, including a tomorrow and a today message. If the person already checked in, they are removed so reminders stop.</li>
+            <li>Check in at the door matches the email or phone from registration, tags the contact as attended, and takes them out of the reminder workflow.</li>
+            <li>Scan to win enters the person in the giveaway only. That path does not treat them as a high intent sales lead by itself.</li>
+            <li>After the form is in, the persona router sends homeowners, contractors, partners, and applicants to the right owner and follow up. A request for an inspection can put a homeowner on the high intent path.</li>
+            <li>A test guard keeps test contacts off live emails, texts, and staff tasks.</li>
+          </ul>
+          <p class="cs-tools"><strong>Tools used.</strong> GoHighLevel funnels, forms, and workflows, with custom HTML, CSS, and JS event pages that submit into native GHL forms.</p>
+          <p class="cs-result">One scan can register an attendee, reminders go out on their own, check in marks who actually came, and each persona leaves the event already on the correct follow up path.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/event-lifecycle.png" alt="Recreated demo of an event lifecycle for Your Roofing Co., covering registration, reminders, check in, a scan to win giveaway, and post event routing." width="1600" height="1000">
+            <img src="media/case-studies/event-registration-390.png" alt="Recreated demo of a mobile event registration page for Your Roofing Co., asking who the visitor is, with fictional persona choices only." width="1600" height="1000">
+            <img src="media/case-studies/event-check-in-390.png" alt="Recreated demo of a mobile event check in page for Your Roofing Co., with email and phone fields and a consent checkbox." width="1600" height="1000">
+            <img src="media/case-studies/scan-to-win-390.png" alt="Recreated demo of a mobile scan to win page for Your Roofing Co., with the same fictional persona choices as registration." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-missed-call" data-cat="home">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Missed call text back and quiet hours"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/missed-call-textback.png" alt="Recreated demo of a missed call text back workflow for Your Roofing Co., showing quiet hours from Monday to Saturday, a sample 555 number, and a callback task for a fictional sales rep." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Home services</p>
+        <h3>Missed call text back and quiet hours</h3>
+        <p class="cs-problem">When an inbound call was missed, the team still needed a way to reach back, but not with a text that ignored consent, and not late at night or on Sunday. The built in missed call text setting could send without the consent rules the company wanted, so I designed a workflow that checks those rules first.</p>
+        <ul class="feat-list">
+            <li>Built a missed call text back workflow with a test guard, a 24 hour already texted check, a consent and quiet hours gate, and a same day callback task for the sales rep.</li>
+            <li>The workflow fires on an incoming call that is logged as no answer, busy, or voicemail.</li>
+            <li>If that number was already sent a missed call text in the last 24 hours, the workflow stops so the person is not texted twice.</li>
+            <li>A text is sent only when SMS consent is Yes, the messaging program is on, SMS is not on DND, and the current time is Monday to Saturday, 8:00 AM to 7:00 PM Central. Sunday is always quiet.</li>
+            <li>If a text is not allowed, no text is sent, and the sales rep still gets a same day callback task.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span></div>
+          <p class="cs-result">A missed call can get a timely text when the person has consented and it is inside the send window. Outside those rules, no text is sent, and the sales rep still has a callback waiting the same day.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">When an inbound call was missed, the team still needed a way to reach back, but not with a text that ignored consent, and not late at night or on Sunday. The built in missed call text setting could send without the consent rules the company wanted, so I designed a workflow that checks those rules first.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built a missed call text back workflow with a test guard, a 24 hour already texted check, a consent and quiet hours gate, and a same day callback task for the sales rep.</li>
+            <li>The workflow fires on an incoming call that is logged as no answer, busy, or voicemail.</li>
+            <li>If that number was already sent a missed call text in the last 24 hours, the workflow stops so the person is not texted twice.</li>
+            <li>A text is sent only when SMS consent is Yes, the messaging program is on, SMS is not on DND, and the current time is Monday to Saturday, 8:00 AM to 7:00 PM Central. Sunday is always quiet.</li>
+            <li>If a text is not allowed, no text is sent, and the sales rep still gets a same day callback task.</li>
+          </ul>
+          <h3>How it works</h3>
+          <ul class="feat-list">
+            <li>The workflow fires on an incoming call to the CRM number that is logged as no answer, busy, or voicemail.</li>
+            <li>A test guard keeps my test contacts off the sales rep's task list.</li>
+            <li>If that number was already sent a missed call text in the last 24 hours, the workflow stops so the person is not texted twice.</li>
+            <li>A text is sent only when SMS consent is Yes, the messaging program is on, SMS is not on DND, and the current time is Monday to Saturday, 8:00 AM to 7:00 PM Central. Sunday is always quiet.</li>
+            <li>When a text is allowed, the workflow waits one minute so the message does not land mid voicemail, then sends a short we missed your call text with a STOP line.</li>
+            <li>On both the send path and the quiet hours path, the sales rep gets a same day callback task that notes whether a text went out.</li>
+          </ul>
+          <p class="cs-tools"><strong>Tools used.</strong> GoHighLevel workflows, SMS, tasks, and timezone aware time checks against the account timezone (Central).</p>
+          <p class="cs-result">A missed call can get a timely text when the person has consented and it is inside the send window. Outside those rules, no text is sent, and the sales rep still has a callback waiting the same day.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/missed-call-textback.png" alt="Recreated demo of a missed call text back workflow for Your Roofing Co., showing quiet hours from Monday to Saturday, a sample 555 number, and a callback task for a fictional sales rep." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-crm-calendar" data-cat="home">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: CRM fields and the inspection booking calendar"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/crm-data-model.png" alt="Recreated demo of custom CRM fields and a roof inspection calendar for Your Roofing Co., using a sample contact named Jordan Hale and a 555 number." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Home services</p>
+        <h3>CRM fields and the inspection booking calendar</h3>
+        <p class="cs-problem">The team could lose track of the next follow up, whether a job had been paid, and why a job was lost, because those facts lived in notes or not at all. The inspection calendar also needed clear booking rules so customers could not book too soon and jobs would not sit back to back.</p>
+        <ul class="feat-list">
+            <li>Added custom fields on the contact for Next Action, Next Action Date, Collection Status, and Loss Reason.</li>
+            <li>Next Action is a short, plain language note for the next step, and Next Action Date is the due date so overdue follow ups can be sorted.</li>
+            <li>Collection Status tracks where the job stands on payment, and Loss Reason is recorded when a job is lost.</li>
+            <li>Set up the roof inspection calendar with a one day minimum notice, 60 minute slots, and a 30 minute buffer between appointments.</li>
+            <li>Hours are Monday through Saturday, and same day booking is not allowed.</li>
+        </ul>
+          <div class="cs-chips"><span>Custom fields</span></div>
+          <p class="cs-result">The team can see the next step, the due date, payment status, and a loss reason on the contact, and inspection bookings arrive with a day's notice and a buffer between jobs.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">The team could lose track of the next follow up, whether a job had been paid, and why a job was lost, because those facts lived in notes or not at all. The inspection calendar also needed clear booking rules so customers could not book too soon and jobs would not sit back to back.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Added custom fields on the contact for Next Action, Next Action Date, Collection Status, and Loss Reason.</li>
+            <li>Next Action is a short, plain language note for the next step, and Next Action Date is the due date so overdue follow ups can be sorted.</li>
+            <li>Collection Status tracks where the job stands on payment, and Loss Reason is recorded when a job is lost.</li>
+            <li>Set up the roof inspection calendar with a one day minimum notice, 60 minute slots, and a 30 minute buffer between appointments.</li>
+            <li>Hours are Monday through Saturday, and same day booking is not allowed.</li>
+          </ul>
+          <h3>How it works</h3>
+          <ul class="feat-list">
+            <li>Next Action is a short, plain language note for the next step the owner should take.</li>
+            <li>Next Action Date is the due date for that step, so overdue follow ups can be sorted and seen.</li>
+            <li>Collection Status tracks where the job stands on payment, instead of hiding that in a note.</li>
+            <li>Loss Reason is recorded when a job is lost, so the team can see why cards fall out of the pipeline.</li>
+            <li>The inspection calendar does not allow a same day booking. Each appointment is one hour, and a 30 minute gap is left between jobs for travel.</li>
+            <li>Hours are Monday through Saturday, which matches how the team actually books inspections.</li>
+          </ul>
+          <p class="cs-tools"><strong>Tools used.</strong> GoHighLevel custom fields and the GoHighLevel calendar and booking widget.</p>
+          <p class="cs-result">The team can see the next step, the due date, payment status, and a loss reason on the contact, and inspection bookings arrive with a day's notice and a buffer between jobs.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/crm-data-model.png" alt="Recreated demo of custom CRM fields and a roof inspection calendar for Your Roofing Co., using a sample contact named Jordan Hale and a 555 number." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-partner-pipeline" data-cat="home">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Partner and sponsor pipeline (11 workflows)"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/partner-pipeline.png" alt="Recreated demo of eleven partnership workflows around one pipeline for Your Roofing Co., including welcome, proposal, meeting, and closed won paths." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Home services</p>
+        <h3>Partner and sponsor pipeline (11 workflows)</h3>
+        <p class="cs-problem">Sponsors, suppliers, and manufacturers needed a proper pipeline, not a single new lead list. After the first welcome email, nothing consistent happened: no follow up until a meeting, no proposal cadence, and no automatic handling when a meeting was booked, cancelled, missed, or held, or when a deal was won or lost.</p>
+        <ul class="feat-list">
+            <li>Built an eleven workflow partnership system in GoHighLevel around one Partnership pipeline.</li>
+            <li>A partner form tags the contact, assigns an owner, creates an opportunity in Target, and sends a welcome email.</li>
+            <li>Follow up runs from day 2 until a meeting is booked, only Monday to Saturday from 8:00 AM to 7:00 PM Central, and it stops if they reply.</li>
+            <li>When the owner moves the card to Proposal, a shorter proposal sequence starts, with the same reply and exit helpers.</li>
+            <li>A confirmed meeting, a cancellation, a no show, and a showed outcome each have their own workflow, and closed won starts activation with owner tasks.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span><span>Pipelines</span></div>
+          <p class="cs-result">A new partner is welcomed, followed up with, and moved through meeting, proposal, negotiation, and won or lost without the owner having to remember every next email. Stage changes and meeting outcomes keep the sequences in sync, and the owner gets a task when a person needs to take over.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">Sponsors, suppliers, and manufacturers needed a proper pipeline, not a single new lead list. After the first welcome email, nothing consistent happened: no follow up until a meeting, no proposal cadence, and no automatic handling when a meeting was booked, cancelled, missed, or held, or when a deal was won or lost.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built an eleven workflow partnership system in GoHighLevel around one Partnership pipeline.</li>
+            <li>A partner form tags the contact, assigns an owner, creates an opportunity in Target, and sends a welcome email.</li>
+            <li>Follow up runs from day 2 until a meeting is booked, only Monday to Saturday from 8:00 AM to 7:00 PM Central, and it stops if they reply.</li>
+            <li>When the owner moves the card to Proposal, a shorter proposal sequence starts, with the same reply and exit helpers.</li>
+            <li>A confirmed meeting, a cancellation, a no show, and a showed outcome each have their own workflow, and closed won starts activation with owner tasks.</li>
+          </ul>
+          <h3>How it works</h3>
+          <ul class="feat-list">
+            <li>A partner form starts the path: the contact is tagged, assigned to the owner, given an opportunity in Target, and sent a welcome email. Follow up then runs from day 2 until a meeting is booked, only Monday to Saturday from 8:00 AM to 7:00 PM Central, and it stops if they reply.</li>
+            <li>If they reply, follow up stops, a Target card can move to Contacted, and the owner gets a task.</li>
+            <li>If the card moves past the early stages, or is marked won, lost, or abandoned, the follow up exits on its own.</li>
+            <li>When the owner moves the card to Proposal, a shorter proposal sequence starts, with the same reply and exit helpers.</li>
+            <li>A confirmed meeting sends confirmation and reminders, moves an early stage card to Meeting, and notifies the owner. Cancelled, no show, and showed each have their own workflow, including rebook or post call tasks for the owner.</li>
+            <li>Closed won, or an opportunity marked Won, stops the open sequences, writes an activation next action, and creates an owner task.</li>
+            <li>Live staff alerts sit behind a test guard.</li>
+          </ul>
+          <p class="cs-tools"><strong>Tools used.</strong> GoHighLevel pipelines, opportunities, workflows, email, tasks, and the contractor and partner meeting calendar.</p>
+          <p class="cs-result">A new partner is welcomed, followed up with, and moved through meeting, proposal, negotiation, and won or lost without the owner having to remember every next email. Stage changes and meeting outcomes keep the sequences in sync, and the owner gets a task when a person needs to take over.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/partner-pipeline.png" alt="Recreated demo of eleven partnership workflows around one pipeline for Your Roofing Co., including welcome, proposal, meeting, and closed won paths." width="1600" height="1000">
+            <img src="media/case-studies/partner-opportunity-demo.png" alt="Recreated demo of a partnership opportunity card for a fictional company called Gulf Coast Building Supply, with a 555 number and sample owner tasks." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-training-series" data-cat="home">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: 10 part team training series"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/training-series.png" alt="Recreated white label outline of a 10 part team training series on a fictional GoHighLevel system. It does not include video frames, staff names, or live account screens." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Home services</p>
+        <h3>10 part team training series</h3>
+        <p class="cs-problem">The company had a new GoHighLevel system with several pipelines, forms, calendars, and automations. The owner, the sales rep, and the recruiting lead needed a way to learn their own day in the system, not a generic product tour.</p>
+        <ul class="feat-list">
+            <li>Wrote, recorded, and delivered a 10 part walkthrough series in the same style throughout.</li>
+            <li>Each episode is a short screen tour of one topic, aimed at the person who will actually do that work.</li>
+            <li>The series covers how a lead comes in, what the system does next, pipelines and who owns what, and each role's day.</li>
+            <li>Later episodes cover phones and the voice assistant, events, and a live test from form submit to the contact record.</li>
+            <li>For this portfolio pack I am sharing only a recreated outline, not the videos themselves.</li>
+        </ul>
+          <p class="cs-result">The team has a <span data-cs-count="10">10</span> part guide to the live system, organized by how a lead moves and by whose day it is, so each role can learn their part without sitting through the whole product.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">The company had a new GoHighLevel system with several pipelines, forms, calendars, and automations. The owner, the sales rep, and the recruiting lead needed a way to learn their own day in the system, not a generic product tour.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Wrote, recorded, and delivered a 10 part walkthrough series in the same style throughout.</li>
+            <li>Each episode is a short screen tour of one topic, aimed at the person who will actually do that work.</li>
+            <li>The series covers how a lead comes in, what the system does next, pipelines and who owns what, and each role's day.</li>
+            <li>Later episodes cover phones and the voice assistant, events, and a live test from form submit to the contact record.</li>
+            <li>For this portfolio pack I am sharing only a recreated outline, not the videos themselves.</li>
+          </ul>
+          <h3>How it works</h3>
+          <ul class="feat-list">
+            <li>Video 1, Getting around GoHighLevel: a tour of the left menu, contacts, conversations, calendars, and automations.</li>
+            <li>Video 2, How a lead comes in: website, QR and event forms, phone, and the other ways a person can enter the CRM.</li>
+            <li>Video 3, What the system does next: tags, lead source, persona, assignment, and the first automatic follow up.</li>
+            <li>Video 4, Pipelines and who owns what: sales, recruiting, contractor network, and partnership boards.</li>
+            <li>Videos 5 to 7, role days: the sales rep's day, the recruiting lead's day, and the owner's day, each focused on tasks, boards, and calendars for that role.</li>
+            <li>Video 8, Phones and the voice assistant: how the public line and the CRM line work together, recordings, and callbacks.</li>
+            <li>Video 9, Events: registration, check in, the giveaway, and post event routing.</li>
+            <li>Video 10, Live test: a test contact from form submit to the contact record, so the team can see a clean example.</li>
+          </ul>
+          <p class="cs-tools"><strong>Tools used.</strong> GoHighLevel, as the system being taught, plus recorded walkthrough production: scripts, screen captures, voiceover, and a consistent title and chapter style.</p>
+          <p class="cs-result">The team has a <span data-cs-count="10">10</span> part guide to the live system, organized by how a lead moves and by whose day it is, so each role can learn their part without sitting through the whole product.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/training-series.png" alt="Recreated white label outline of a 10 part team training series on a fictional GoHighLevel system. It does not include video frames, staff names, or live account screens." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-deposit-window" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Deposit Window Payment Flow"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-deposit-window.png" alt="Recreated GoHighLevel workflow demo for a fictional school called Northstar Coaching, showing a deposit paid trigger, a 7 day reminder path, a balance paid goal, a Draft badge, and sample contacts named Maya Ellison and Jordan Hale." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>Deposit Window Payment Flow</h3>
+        <p class="cs-problem">After a client paid a deposit for a high ticket program, the remaining balance follow up was easy to miss. The team also needed a way to pause access if the window ended unpaid, then restore it when the balance cleared, including when funds arrived by wire.</p>
+        <ul class="feat-list">
+            <li>Built three payment workflows: one starts a 7 day balance window when a deposit succeeds, one runs when the balance is paid, and one runs when outside funds are marked ready.</li>
+            <li>Used tags and If Else branches so a second deposit does not restart the window, and so the balance paid path stops the reminder series.</li>
+            <li>Moved the opportunity to a Paid in Full pipeline stage, then sent the client email and SMS plus an internal team alert.</li>
+            <li>On the funds ready path, skipped people who had already paid in full, and only then sent wire instructions and alerts.</li>
+            <li>Left all three workflows in Draft for review, with short test waits, before any publish.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span><span>Pipelines</span><span>Payments</span></div>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">After a client paid a deposit for a high ticket program, the remaining balance follow up was easy to miss. The team also needed a way to pause access if the window ended unpaid, then restore it when the balance cleared, including when funds arrived by wire.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built three payment workflows: one starts a 7 day balance window when a deposit succeeds, one runs when the balance is paid, and one runs when outside funds are marked ready.</li>
+            <li>Used tags and If Else branches so a second deposit does not restart the window, and so the balance paid path stops the reminder series.</li>
+            <li>Moved the opportunity to a Paid in Full pipeline stage, then sent the client email and SMS plus an internal team alert.</li>
+            <li>On the funds ready path, skipped people who had already paid in full, and only then sent wire instructions and alerts.</li>
+            <li>Left all three workflows in Draft for review, with short test waits, before any publish.</li>
+          </ul>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-deposit-window.png" alt="Recreated GoHighLevel workflow demo for a fictional school called Northstar Coaching, showing a deposit paid trigger, a 7 day reminder path, a balance paid goal, a Draft badge, and sample contacts named Maya Ellison and Jordan Hale." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-booking-chase" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Post Purchase Booking Chase"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-booking-chase.png" alt="Recreated published workflow demo for a fictional practice called Harbor Method Coaching, with If Else skip gates, a Purchased to Booked pipeline strip, and sample contacts named Priya Raman and Elena Vasquez." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>Post Purchase Booking Chase</h3>
+        <p class="cs-problem">New members who bought a coaching offer were still getting booking reminders after they had already scheduled a session. The team needed a clear pipeline and a chase sequence that stopped as soon as the booking was real.</p>
+        <ul class="feat-list">
+            <li>Set up the offer in the CRM with tags, custom fields, and a pipeline that moves from Purchased to Booked, then through session and enrollment stages.</li>
+            <li>Added six If Else skip gates on the live booking chase workflow so buyers who already booked, already finished, or no longer needed a session leave the sequence.</li>
+            <li>Added a calendar goal so a confirmed VIP session ends the chase automatically.</li>
+            <li>Saved and published the skip gates on the live workflow after a builder review.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span><span>Pipelines</span><span>Custom fields</span></div>
+          <p class="cs-result">After the skip gates went live, the needs booking queue dropped to zero.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">New members who bought a coaching offer were still getting booking reminders after they had already scheduled a session. The team needed a clear pipeline and a chase sequence that stopped as soon as the booking was real.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Set up the offer in the CRM with tags, custom fields, and a pipeline that moves from Purchased to Booked, then through session and enrollment stages.</li>
+            <li>Added six If Else skip gates on the live booking chase workflow so buyers who already booked, already finished, or no longer needed a session leave the sequence.</li>
+            <li>Added a calendar goal so a confirmed VIP session ends the chase automatically.</li>
+            <li>Saved and published the skip gates on the live workflow after a builder review.</li>
+          </ul>
+          <p class="cs-result">After the skip gates went live, the needs booking queue dropped to zero.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-booking-chase.png" alt="Recreated published workflow demo for a fictional practice called Harbor Method Coaching, with If Else skip gates, a Purchased to Booked pipeline strip, and sample contacts named Priya Raman and Elena Vasquez." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-class-registration" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Live Class Registration Flow"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-class-registration.png" alt="Recreated demo of a published registration workflow and a sample email for a fictional class called Live Profile Studio, hosted by Avery Quinn, with a sample recipient named Nina Cole." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>Live Class Registration Flow</h3>
+        <p class="cs-problem">Buyers of a live coaching offer were promised a bonus class, but there was no published registration workflow to enroll them and send the class details. People who had already booked a private session also needed to be kept out of a second booking ask.</p>
+        <ul class="feat-list">
+            <li>Built and published a registration workflow for the bonus live class.</li>
+            <li>Enrolled the existing buyers who already had the bonus class tag.</li>
+            <li>Sent a registration email with the class date, time, and a live video registration link.</li>
+            <li>Planned a skip so buyers who already had a session on the calendar would not get a booking ask.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span></div>
+          <p class="cs-result"><span data-cs-count="8">8</span> existing buyers were enrolled and received the class registration email.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">Buyers of a live coaching offer were promised a bonus class, but there was no published registration workflow to enroll them and send the class details. People who had already booked a private session also needed to be kept out of a second booking ask.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built and published a registration workflow for the bonus live class.</li>
+            <li>Enrolled the existing buyers who already had the bonus class tag.</li>
+            <li>Sent a registration email with the class date, time, and a live video registration link.</li>
+            <li>Planned a skip so buyers who already had a session on the calendar would not get a booking ask.</li>
+          </ul>
+          <p class="cs-result"><span data-cs-count="8">8</span> existing buyers were enrolled and received the class registration email.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-class-registration.png" alt="Recreated demo of a published registration workflow and a sample email for a fictional class called Live Profile Studio, hosted by Avery Quinn, with a sample recipient named Nina Cole." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-first-touch" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: First Touch Source Tracking"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-first-touch-utm.png" alt="Recreated contact record and workflow demo for a fictional brand called Lumen Coaching, showing last touch values that can change and locked first touch fields for a sample contact named Sam Rivera." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>First Touch Source Tracking</h3>
+        <p class="cs-problem">Last touch UTM values were overwriting the original source, so the team could not see which quiz, ad, or message first brought a lead in. Source tags were also inconsistent across intake workflows.</p>
+        <ul class="feat-list">
+            <li>Created eight first touch custom fields for source, medium, campaign, term, content, plus campaign, ad set, and ad names.</li>
+            <li>Built and published a copy workflow that fills those first touch fields only when they are still empty, so later visits do not overwrite the original source.</li>
+            <li>Created eight intake source tags for the main lead paths, including a quiz, comments, direct messages, and a guide request.</li>
+            <li>Added the matching source tag on five published intake workflows, without changing their existing triggers or messages.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span><span>Custom fields</span><span>UTM</span></div>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">Last touch UTM values were overwriting the original source, so the team could not see which quiz, ad, or message first brought a lead in. Source tags were also inconsistent across intake workflows.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Created eight first touch custom fields for source, medium, campaign, term, content, plus campaign, ad set, and ad names.</li>
+            <li>Built and published a copy workflow that fills those first touch fields only when they are still empty, so later visits do not overwrite the original source.</li>
+            <li>Created eight intake source tags for the main lead paths, including a quiz, comments, direct messages, and a guide request.</li>
+            <li>Added the matching source tag on five published intake workflows, without changing their existing triggers or messages.</li>
+          </ul>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-first-touch-utm.png" alt="Recreated contact record and workflow demo for a fictional brand called Lumen Coaching, showing last touch values that can change and locked first touch fields for a sample contact named Sam Rivera." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-reminder-skips" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Challenge Reminder Skip Logic"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-reminder-skips.png" alt="Recreated reminder workflow demo for a fictional 3 day challenge called Clear Path Intensive. Grace Patel is skipped after a finished tag, while Owen Brooks still gets the Day 2 reminder. The portal link is a sample only." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>Challenge Reminder Skip Logic</h3>
+        <p class="cs-problem">A multi day challenge was sending day by day reminders even after someone had already finished. That created extra email and text noise for people who were already done.</p>
+        <ul class="feat-list">
+            <li>Built cohort reminders for a 3 day challenge, with email and SMS for get ready, day open, and later day nudges.</li>
+            <li>Added skip gates so a participant who had already finished would not receive the later reminders.</li>
+            <li>Saved the gates on the live reminder workflow.</li>
+        </ul>
+          <div class="cs-chips"><span>Workflows</span></div>
+          <p class="cs-result">A participant who had already finished was left in a finished state and was not sent later reminders.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">A multi day challenge was sending day by day reminders even after someone had already finished. That created extra email and text noise for people who were already done.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Built cohort reminders for a 3 day challenge, with email and SMS for get ready, day open, and later day nudges.</li>
+            <li>Added skip gates so a participant who had already finished would not receive the later reminders.</li>
+            <li>Saved the gates on the live reminder workflow.</li>
+          </ul>
+          <p class="cs-result">A participant who had already finished was left in a finished state and was not sent later reminders.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-reminder-skips.png" alt="Recreated reminder workflow demo for a fictional 3 day challenge called Clear Path Intensive. Grace Patel is skipped after a finished tag, while Owen Brooks still gets the Day 2 reminder. The portal link is a sample only." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-training-pages" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Training Pages and Link Hub"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-registration-page.png" alt="Recreated desktop and mobile view of a fictional Thursday Evening Training registration page for Lumen Coaching, with a native looking form, a 6:00 PM session option, and a sample link in bio card. The coach mark is a monogram, not a photo of a real person." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>Training Pages and Link Hub</h3>
+        <p class="cs-problem">The weekly training registration page, the confirmation path, and the public link hub were out of date. Session times and the featured training card did not match what the business was actually running.</p>
+        <ul class="feat-list">
+            <li>Updated the live weekly training registration and confirmation path, including the phone field and the evening session confirmation copy.</li>
+            <li>Kept the native registration form in place so existing submissions and reminder workflows still worked.</li>
+            <li>Swapped the live link in bio card to the current free training.</li>
+            <li>Prepared a full registration page rebuild package that matches the approved design, ready for a later publish pass.</li>
+            <li>Prepared sales page and membership copy updates for the related training and offer pages.</li>
+        </ul>
+          <div class="cs-chips"><span>Funnels</span></div>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">The weekly training registration page, the confirmation path, and the public link hub were out of date. Session times and the featured training card did not match what the business was actually running.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Updated the live weekly training registration and confirmation path, including the phone field and the evening session confirmation copy.</li>
+            <li>Kept the native registration form in place so existing submissions and reminder workflows still worked.</li>
+            <li>Swapped the live link in bio card to the current free training.</li>
+            <li>Prepared a full registration page rebuild package that matches the approved design, ready for a later publish pass.</li>
+            <li>Prepared sales page and membership copy updates for the related training and offer pages.</li>
+          </ul>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-registration-page.png" alt="Recreated desktop and mobile view of a fictional Thursday Evening Training registration page for Lumen Coaching, with a native looking form, a 6:00 PM session option, and a sample link in bio card. The coach mark is a monogram, not a photo of a real person." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+
+    <article class="cs-card" id="cs-pixel-tracking" data-cat="coaching">
+      <button type="button" class="cs-open" aria-expanded="false" aria-controls="cs-dialog" data-cursor aria-label="Open case study: Live Site Pixel Tracking"></button>
+      <span class="cs-hint" aria-hidden="true">View</span>
+      <figure class="cs-fig">
+        <img src="media/case-studies/coaching-pixel-tracking.png" alt="Recreated demo of a fictional website at lumencoaching.example with an events panel reporting a PageView for sample pixel ID 1111222233334444, plus a single Purchase sender workflow named Order Complete and a sample test event for Foundation Membership." width="1600" height="1000" loading="lazy">
+      </figure>
+      <div class="cs-body">
+        <p class="cs-tag">Coaching and education</p>
+        <h3>Live Site Pixel Tracking</h3>
+        <p class="cs-problem">The public website and the main offer page were not sending consistent page view events to the ad platform, which made it hard to measure visits and later purchase events.</p>
+        <ul class="feat-list">
+            <li>Added the ad platform pixel to the public website and the main offer page.</li>
+            <li>Confirmed the pixel was present and firing page views on the live pages.</li>
+            <li>Set the in platform purchase event so only one workflow is the sender, which avoids double counting.</li>
+        </ul>
+          <div class="cs-chips"><span>Funnels</span><span>Payments</span></div>
+          <p class="cs-result">The tracking pixel was confirmed firing on the live website pages.</p>
+      </div>
+      <div class="cs-full" hidden>
+        <p class="cs-problem">The public website and the main offer page were not sending consistent page view events to the ad platform, which made it hard to measure visits and later purchase events.</p>
+          <h3>What I built</h3>
+          <ul class="feat-list">
+            <li>Added the ad platform pixel to the public website and the main offer page.</li>
+            <li>Confirmed the pixel was present and firing page views on the live pages.</li>
+            <li>Set the in platform purchase event so only one workflow is the sender, which avoids double counting.</li>
+          </ul>
+          <p class="cs-result">The tracking pixel was confirmed firing on the live website pages.</p>
+        <p class="cs-note">Visuals on this card are recreated with sample data. They do not show the live client account.</p>
+        <div class="cs-gallery">
+            <img src="media/case-studies/coaching-pixel-tracking.png" alt="Recreated demo of a fictional website at lumencoaching.example with an events panel reporting a PageView for sample pixel ID 1111222233334444, plus a single Purchase sender workflow named Order Complete and a sample test event for Foundation Membership." width="1600" height="1000">
+        </div>
+      </div>
+    </article>
+      </div>
+    </div>
+
+    <div id="cs-dialog" class="cs-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="cs-dialog-title">
+      <button type="button" class="cs-backdrop" data-cs-close tabindex="-1" aria-label="Close case study"></button>
+      <div class="cs-panel" tabindex="-1">
+        <div class="cs-panel-head">
+          <div>
+            <p class="cs-tag" id="cs-dialog-tag">Case study</p>
+            <h2 id="cs-dialog-title">Case study</h2>
+          </div>
+          <button type="button" class="cs-close" data-cursor>Close</button>
+        </div>
+        <div class="cs-gallery">
+          <figure class="cs-mainfig">
+            <img id="cs-dialog-img" src="" alt="">
+            <button type="button" class="cs-navbtn cs-prev" aria-label="Previous image" hidden>&larr;</button>
+            <button type="button" class="cs-navbtn cs-next" aria-label="Next image" hidden>&rarr;</button>
+          </figure>
+          <div class="cs-thumbs" id="cs-thumbs" hidden></div>
+        </div>
+        <div class="cs-panel-copy" id="cs-dialog-copy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICES ============================ -->
+  <section id="services" class="section" aria-labelledby="services-title" data-index="03" data-name="Services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num" aria-hidden="true">03</span>
         <span class="eyebrow">What I do</span>
       </div>
       <div class="split-head">
@@ -185,10 +774,10 @@
   </section>
 
   <!-- ============================ PROCESS (stacked story panels) ============================ -->
-  <section id="process" class="section" aria-labelledby="process-title" data-index="03" data-name="How I work">
+  <section id="process" class="section alt" aria-labelledby="process-title" data-index="04" data-name="How I work">
     <div class="wrap">
       <div class="sec-head">
-        <span class="sec-num" aria-hidden="true">03</span>
+        <span class="sec-num" aria-hidden="true">04</span>
         <span class="eyebrow">How I work</span>
       </div>
       <h2 id="process-title" data-lines>A simple four-step process</h2>
@@ -207,11 +796,11 @@
        These are FICTIONAL demo designs, not client work. Keep the "Demo design" badges and the note.
        Links point at samples/<slug>/ at the repo root.
   ======================================================================= -->
-  <section id="work" class="section alt" aria-labelledby="work-title" data-index="04" data-name="Sample projects">
+  <section id="work" class="section" aria-labelledby="work-title" data-index="05" data-name="Sample projects">
     <div class="wrap work-row">
       <div class="work-intro">
         <div class="sec-head">
-          <span class="sec-num" aria-hidden="true">04</span>
+          <span class="sec-num" aria-hidden="true">05</span>
           <span class="eyebrow">Sample projects</span>
         </div>
         <h2 id="work-title" data-lines>What I build, by industry</h2>
@@ -328,10 +917,10 @@
   </section>
 
   <!-- ============================ TOOLS ============================ -->
-  <section id="tools" class="section" aria-labelledby="tools-title" data-index="05" data-name="Tools">
+  <section id="tools" class="section alt" aria-labelledby="tools-title" data-index="06" data-name="Tools">
     <div class="wrap">
       <div class="sec-head">
-        <span class="sec-num" aria-hidden="true">05</span>
+        <span class="sec-num" aria-hidden="true">06</span>
         <span class="eyebrow">Tools and skills</span>
       </div>
       <h2 id="tools-title" data-lines>What I work with every day</h2>
@@ -354,7 +943,7 @@
   </section>
 
   <!-- ============================ ABOUT ============================ -->
-  <section id="about" class="section alt" aria-labelledby="about-title" data-index="06" data-name="About">
+  <section id="about" class="section" aria-labelledby="about-title" data-index="07" data-name="About">
     <div class="wrap about">
       <figure class="liquid" id="liquid">
         <img class="photo" src="images/mark-polidario.jpg" alt="Mark Lawrence Polidario, GoHighLevel specialist" width="640" height="640" loading="lazy">
@@ -363,7 +952,7 @@
       </figure>
       <div>
         <div class="sec-head">
-          <span class="sec-num" aria-hidden="true">06</span>
+          <span class="sec-num" aria-hidden="true">07</span>
           <span class="eyebrow">About</span>
         </div>
         <h2 id="about-title" data-lines>Hi, I'm Mark Lawrence Polidario</h2>
@@ -376,11 +965,11 @@
   </section>
 
   <!-- ============================ FAQ ============================ -->
-  <section id="faq" class="section" aria-labelledby="faq-title" data-index="07" data-name="FAQ">
+  <section id="faq" class="section alt" aria-labelledby="faq-title" data-index="08" data-name="FAQ">
     <div class="wrap faq-row">
       <div>
         <div class="sec-head">
-          <span class="sec-num" aria-hidden="true">07</span>
+          <span class="sec-num" aria-hidden="true">08</span>
           <span class="eyebrow">FAQ</span>
         </div>
         <h2 id="faq-title" data-lines>Questions business owners ask</h2>
@@ -414,10 +1003,10 @@
   <!-- ============================ BOOKING / CONTACT ============================
        No transforms or reveals on the Calendly box or its parents, so the iframe is never disturbed.
   ======================================================================= -->
-  <section id="book" class="section alt" aria-labelledby="book-title" data-index="08" data-name="Book a call">
+  <section id="book" class="section" aria-labelledby="book-title" data-index="09" data-name="Book a call">
     <div class="wrap">
       <div class="sec-head">
-        <span class="sec-num" aria-hidden="true">08</span>
+        <span class="sec-num" aria-hidden="true">09</span>
         <span class="eyebrow">Let's talk</span>
       </div>
       <h2 id="book-title" data-lines>Book your free strategy call</h2>
